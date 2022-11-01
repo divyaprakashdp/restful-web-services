@@ -12,9 +12,9 @@ public class TodoHardcodedService {
     private static int idCounter = 0;
 
     static {
-        todos.add(new Todo(++idCounter, "DP", String.format("This is todo number ", idCounter), new Date(), false));
-        todos.add(new Todo(++idCounter, "DP", String.format("This is todo number ", idCounter), new Date(), false));
-        todos.add(new Todo(++idCounter, "DP", String.format("This is todo number ", idCounter), new Date(), false));
+        todos.add(new Todo(++idCounter, "DP", String.format("This is todo number %s", idCounter), new Date(), false));
+        todos.add(new Todo(++idCounter, "DP", String.format("This is todo number %s", idCounter), new Date(), false));
+        todos.add(new Todo(++idCounter, "DP", String.format("This is todo number %s", idCounter), new Date(), false));
     }
 
     public static List<Todo> getAll(){
