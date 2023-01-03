@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class TodoHardcodedService {
-    private static List<Todo> todos = new ArrayList();
+    private static List<Todo> todos = new ArrayList<>();
     private static int idCounter = 0;
 
     static {
@@ -17,7 +17,37 @@ public class TodoHardcodedService {
         todos.add(new Todo(++idCounter, "DP", String.format("This is todo number %s", idCounter), new Date(), false));
     }
 
-    public static List<Todo> getAll(){
+    public static List<Todo> getAll() {
         return todos;
+    }
+
+    public Todo deleteById(long id) {
+        Todo todo = getById(id);
+        if (todo == null) return null;
+
+        if (todos.remove(todo)) {
+            return todo;
+        }
+        return null;
+    }
+
+    public Todo updateById(long id) {
+        Todo todo = getById(id);
+        if (todo == null) return null;
+
+        if (todos.remove(todo)) {
+            return todo;
+        }
+        return null;
+    }
+
+    public Todo getById(long id) {
+        for (Todo todo : todos
+        ) {
+            if (todo.getId() == id) {
+                return todo;
+            }
+        }
+        return null;
     }
 }
